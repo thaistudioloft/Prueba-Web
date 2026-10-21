@@ -1,0 +1,87 @@
+/* ===== 1. COLORES Y TIPOGRAFÍA (cambiá acá y se actualiza toda la web) ===== */
+:root{
+  --jade:#1F4A44;      /* color principal */
+  --jade-claro:#E4ECE8;
+  --oro:#E0A526;       /* color de acento (botones) */
+  --fondo:#F3F6F4;
+  --texto:#17231F;
+  --blanco:#fff;
+  --radio:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.65;font-size:1.05rem}
+h1,h2,h3{font-family:'Prata',Georgia,serif;font-weight:400;line-height:1.2;color:var(--jade)}
+h1{font-size:2rem} h2{font-size:1.6rem;margin-bottom:1rem} h3{font-size:1.2rem;margin-bottom:.4rem}
+p{margin-bottom:1rem;max-width:70ch}
+a{color:var(--jade)}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--oro);outline-offset:2px}
+
+/* ===== 2. ESTRUCTURA GENERAL ===== */
+.contenedor{width:100%;max-width:1100px;margin:0 auto;padding:0 1.25rem}
+section{padding:3rem 0}
+.fondo-jade{background:var(--jade);color:var(--blanco)}
+.fondo-jade h2,.fondo-jade h3{color:var(--blanco)}
+
+/* ===== 3. ENCABEZADO Y MENÚ (celular primero) ===== */
+header{background:var(--jade);position:sticky;top:0;z-index:10}
+.barra{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:64px}
+.logo{font-family:'Prata',serif;color:var(--blanco);text-decoration:none;font-size:1.25rem}
+.hamburguesa{background:none;border:2px solid var(--blanco);color:var(--blanco);font-size:1.4rem;border-radius:8px;padding:.1rem .6rem;cursor:pointer}
+nav{display:none;width:100%;padding-bottom:1rem}
+nav.abierto{display:block}
+nav ul{list-style:none}
+nav a{display:block;color:var(--blanco);text-decoration:none;padding:.55rem 0}
+nav a:hover,nav a.activo{color:var(--oro)}
+.submenu{padding-left:1rem}
+
+/* ===== 4. BOTONES ===== */
+.boton{display:inline-block;background:var(--oro);color:var(--texto);padding:.8rem 1.5rem;border-radius:var(--radio);text-decoration:none;font-weight:700}
+.boton:hover{filter:brightness(1.08)}
+.boton-borde{background:none;border:2px solid currentColor;color:inherit}
+
+/* ===== 5. PORTADA ===== */
+.portada{background:var(--jade);color:var(--blanco);padding:4rem 0}
+.portada h1{color:var(--blanco);font-size:2.4rem;margin-bottom:1rem}
+.portada .botones{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+.cabecera-pagina{background:var(--jade-claro);padding:2.5rem 0}
+
+/* ===== 6. TARJETAS (1 columna celular, 2 tablet, 3 computadora) ===== */
+.grilla{display:grid;grid-template-columns:1fr;gap:1.25rem}
+.tarjeta{background:var(--blanco);border-radius:var(--radio);overflow:hidden;display:flex;flex-direction:column}
+.tarjeta .texto{padding:1.25rem;display:flex;flex-direction:column;flex:1}
+.tarjeta .texto p{flex:1}
+.foto{aspect-ratio:4/3;background:linear-gradient(135deg,#9db8ae,#4f7a6e);display:grid;place-items:center;color:var(--blanco);font-size:.9rem;text-align:center;padding:1rem}
+img{object-fit:cover}
+.fecha{font-size:.9rem;color:#5b6b66}
+.dos-col{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+.precio{font-weight:700;font-size:1.15rem;margin-bottom:.75rem}
+.datos{list-style:none;margin-bottom:1.5rem}
+.datos li{padding:.4rem 0;border-bottom:1px solid var(--jade-claro)}
+
+/* ===== 7. FORMULARIO Y PIE ===== */
+label{display:block;font-weight:700;margin:1rem 0 .3rem}
+input,textarea{width:100%;padding:.7rem;border:1px solid #9aa9a3;border-radius:8px;font:inherit}
+footer{background:var(--texto);color:#cfd9d5;padding:2.5rem 0;font-size:.95rem}
+footer a{color:var(--oro)}
+footer p{margin-bottom:.4rem}
+
+/* ===== 8. TABLET (desde 768px) ===== */
+@media (min-width:768px){
+  h1{font-size:2.6rem} .portada h1{font-size:3.2rem}
+  .grilla{grid-template-columns:repeat(2,1fr)}
+  .dos-col{grid-template-columns:1fr 1fr}
+}
+
+/* ===== 9. COMPUTADORA (desde 1024px) ===== */
+@media (min-width:1024px){
+  .hamburguesa{display:none}
+  nav{display:block;width:auto;padding:0}
+  nav>ul{display:flex;gap:1.5rem}
+  nav li{position:relative}
+  .submenu{display:none;position:absolute;top:100%;left:-1rem;background:var(--jade);min-width:230px;padding:.5rem 1rem;border-radius:0 0 var(--radio) var(--radio)}
+  li:hover>.submenu,li:focus-within>.submenu{display:block}
+  .grilla{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

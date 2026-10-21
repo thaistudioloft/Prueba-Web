@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendario | Masaje Tailandés</title>
+  <meta name="description" content="Calendario anual de cursos, formaciones y retiros de masaje tailandés.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/calendario.css">
+</head>
+<body>
+<header>
+  <div class="contenedor barra">
+    <a class="logo" href="index.html">Masaje Tailandés</a>
+    <button class="hamburguesa" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+    <nav aria-label="Principal"><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a><ul class="submenu"><li><a href="formacion-inicial.html">Formación inicial</a></li><li><a href="formacion-avanzada.html">Formación avanzada</a></li><li><a href="retiros.html">Retiros</a></li><li><a href="viaje-a-tailandia.html">Viaje a Tailandia</a></li><li><a href="cursos-especiales.html">Cursos especiales</a></li><li><a href="clases-de-yoga.html">Clases de yoga</a></li></ul></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="calendario.html" class=activo>Calendario</a></li><li><a href="blog.html">Blog</a></li><li><a href="tienda.html">Tienda</a></li><li><a href="contacto.html">Contacto</a></li></ul></nav>
+  </div>
+</header>
+<main>
+  <section class="cabecera-pagina">
+    <div class="contenedor">
+      <h1>Calendario</h1>
+      <p>Cursos, formaciones y retiros del año. Tocá un día marcado para ver la actividad.</p>
+    </div>
+  </section>
+
+  <section class="calendario">
+    <div class="contenedor cal-layout">
+
+      <div class="cal">
+        <div class="cal-cabecera">
+          <button id="cal-ant" type="button" aria-label="Mes anterior">&#8249;</button>
+          <h2 id="cal-titulo"></h2>
+          <button id="cal-sig" type="button" aria-label="Mes siguiente">&#8250;</button>
+        </div>
+        <div class="cal-semana"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="cal-dias" id="cal-dias"></div>
+        <ul class="cal-leyenda" id="cal-leyenda"></ul>
+      </div>
+
+      <div class="cal-panel" id="cal-panel" aria-live="polite"></div>
+
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="contenedor">
+    <p><strong>Masaje Tailandés</strong> - Tu texto breve acá</p>
+    <p>WhatsApp: <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">escribime</a> | Instagram: <a href="https://instagram.com/TU-USUARIO" target="_blank" rel="noopener">@tu-usuario</a></p>
+    <p>&copy; 2026 Masaje Tailandés</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/eventos.js"></script>
+<script src="js/calendario.js"></script>
+</body>
+</html>

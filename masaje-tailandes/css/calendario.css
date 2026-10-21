@@ -1,0 +1,31 @@
+/* ===== CALENDARIO (grilla de mes) ===== */
+.calendario .contenedor{max-width:900px}
+.cal-layout{display:grid;grid-template-columns:1fr;gap:2rem;align-items:start}
+.cal{background:var(--blanco);border-radius:var(--radio);padding:1.25rem}
+.cal-cabecera{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.cal-cabecera h2{font-family:'Nunito Sans',sans-serif;font-weight:700;color:var(--texto);font-size:1.2rem;margin:0;text-transform:capitalize}
+.cal-cabecera button{width:40px;height:40px;border-radius:50%;border:1px solid #cfd9d5;background:var(--blanco);color:var(--texto);font-size:1.4rem;line-height:1;cursor:pointer}
+.cal-cabecera button:disabled{opacity:.3;cursor:default}
+.cal-semana,.cal-dias{display:grid;grid-template-columns:repeat(7,1fr);text-align:center}
+.cal-semana span{font-size:.8rem;color:#5b6b66;padding:.4rem 0}
+.cal-dia{position:relative;height:50px;border:0;background:none;font:inherit;color:var(--texto);cursor:pointer;display:flex;justify-content:center;padding-top:2px}
+.cal-dia .num{width:34px;height:34px;display:grid;place-items:center;border-radius:50%}
+.cal-dia.fuera{color:#b3bdb9;cursor:default}
+.cal-dia.hoy .num{border:2px solid var(--jade)}
+.cal-dia.elegido .num{background:var(--texto);color:var(--blanco)}
+.puntos{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);display:flex;gap:3px}
+.punto{display:inline-block;width:6px;height:6px;border-radius:50%}
+.cal-leyenda{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--jade-claro);font-size:.85rem}
+.cal-leyenda li{display:flex;align-items:center;gap:.4rem}
+
+.cal-panel h3{font-family:'Nunito Sans',sans-serif;font-weight:700;color:#5b6b66;font-size:.95rem;margin-bottom:1rem;text-transform:capitalize}
+.cal-evento{border-left:4px solid var(--color);background:color-mix(in srgb,var(--color) 10%,#fff);border-radius:var(--radio);padding:.9rem 1rem;margin-bottom:.75rem}
+.cal-evento h4{font-family:'Nunito Sans',sans-serif;font-size:1.05rem;color:var(--texto);margin-bottom:.2rem}
+.cal-evento p{font-size:.92rem;margin-bottom:.4rem}
+.cal-estado{display:inline-block;font-size:.8rem;font-weight:700;padding:.1rem .6rem;border-radius:999px;background:var(--jade-claro)}
+.cal-estado.completo{background:#f3d9d4;color:#7a2a1d}
+.cal-enlaces{display:flex;gap:1.25rem;margin-top:.6rem;font-weight:700}
+
+@media (min-width:900px){
+  .cal-layout{grid-template-columns:1.1fr 1fr}   /* calendario a la izquierda, detalle a la derecha */
+}
